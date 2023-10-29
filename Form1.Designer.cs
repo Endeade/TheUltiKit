@@ -35,7 +35,14 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            pictureBox1 = new PictureBox();
+            label4 = new Label();
+            label5 = new Label();
+            checkBox1 = new CheckBox();
+            button2 = new Button();
             tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -83,6 +90,7 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tabControl1.Location = new Point(12, 72);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -91,12 +99,17 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(button2);
+            tabPage1.Controls.Add(checkBox1);
+            tabPage1.Controls.Add(label4);
+            tabPage1.Controls.Add(pictureBox1);
+            tabPage1.Controls.Add(label5);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(952, 499);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tabPage1.Text = "Tweaks";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -104,10 +117,57 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(192, 72);
+            tabPage2.Size = new Size(952, 499);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "Cleanup";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(13, 19);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(80, 74);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semilight", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(99, 47);
+            label4.Name = "label4";
+            label4.Size = new Size(222, 38);
+            label4.TabIndex = 6;
+            label4.Text = "Removes Microsoft Edge from\r\nWindows, but keeps EdgeWebView";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(99, 26);
+            label5.Name = "label5";
+            label5.Size = new Size(111, 21);
+            label5.TabIndex = 5;
+            label5.Text = "Remove Edge";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(331, 52);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(15, 14);
+            checkBox1.TabIndex = 7;
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(845, 454);
+            button2.Name = "button2";
+            button2.Size = new Size(101, 39);
+            button2.TabIndex = 8;
+            button2.Text = "Execute";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
@@ -125,6 +185,9 @@
             Text = "TheUltiKit";
             Load += Form1_Load;
             tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -138,5 +201,10 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
+        private Button button2;
+        private CheckBox checkBox1;
+        private Label label4;
+        private PictureBox pictureBox1;
+        private Label label5;
     }
 }
