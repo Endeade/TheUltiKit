@@ -9,8 +9,4 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="DarkNet" Version="2.3.0" />
-  </ItemGroup>
-
 </Project>
