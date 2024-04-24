@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System.Runtime.InteropServices;
 using System.Net;
 using System.IO;
+using System.Diagnostics;
 
 namespace TheUltiKit
 {
@@ -63,6 +64,51 @@ namespace TheUltiKit
                     Process.Start(removemsedge);
                     checkBox1.Checked = false;
                 }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                string wintemppath = Environment.GetFolderPath(Environment.SpecialFolder.Windows) + "\\Temp";
+                DirectoryInfo di1 = new DirectoryInfo(wintemppath);
+                foreach (FileInfo file in di1.GetFiles())
+                {
+                    try
+                    {
+                        file.Delete();
+                    } catch { }
+                }
+                foreach (DirectoryInfo dir in di1.GetDirectories())
+                {
+                    try
+                    {
+                        dir.Delete(true);
+                    }
+                    catch { }
+                }
+
+                string tmpdirpath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Temp";
+                DirectoryInfo di2 = new DirectoryInfo(tmpdirpath);
+                foreach (FileInfo file in di2.GetFiles())
+                {
+                    try
+                    {
+                        file.Delete();
+                    }
+                    catch { }
+                }
+                foreach (DirectoryInfo dir in di2.GetDirectories())
+                {
+                    try
+                    {
+                        dir.Delete(true);
+                    }
+                    catch { }
+                }
+
+                checkBox2.Checked = false;
             }
         }
     }
