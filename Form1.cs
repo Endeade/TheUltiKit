@@ -13,7 +13,7 @@ namespace TheUltiKit
         {
             InitializeComponent();
         }
-        [DllImport("DwmApi")] //System.Runtime.InteropServices
+        [DllImport("DwmApi")] // this is for some sort of setting dark mode titlebars or smth using dwm, no idea
         private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
 
         protected override void OnHandleCreated(EventArgs e)
@@ -21,10 +21,10 @@ namespace TheUltiKit
             if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
                 DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e) 
         {
             this.Opacity = 0.90;
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize"))
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize")) // set the form opacity to 90% and set dark mode if the option for it is enabled in windows
             {
                 if (key != null)
                 {
@@ -58,7 +58,7 @@ namespace TheUltiKit
                 {
                     string docs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                     Directory.CreateDirectory(docs + "TheUltiKit");
-                    string theultikitdir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "TheUltiKit";
+                    string theultikitdir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\TheUltiKit"; // this was fucked before so i now fixed it lmfao
                     string removemsedge = theultikitdir + "\\removemsedge.exe";
                     client.DownloadFile("https://github.com/ShadowWhisperer/Remove-MS-Edge/blob/main/Remove-EdgeOnly.exe?raw=true", removemsedge);
                     Process.Start(removemsedge);

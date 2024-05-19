@@ -31,3 +31,7 @@ bin/Debug/net6.0-windows/TheUltiKit.dll
 bin/Debug/net6.0-windows/TheUltiKit.exe
 bin/Debug/net6.0-windows/TheUltiKit.pdb
 bin/Debug/net6.0-windows/TheUltiKit.runtimeconfig.json
+*.bin
+*.json
+*.vsidx
+*.v2
